@@ -18,7 +18,9 @@ public class MockController {
 
     @PostMapping("/")
     public ResponseEntity<?> createBook(@RequestBody Book newBook){
-        return new ResponseEntity<>(newBook, HttpStatus.CREATED);
+        if(newBook.getName() != null)
+            return new ResponseEntity<>(newBook, HttpStatus.CREATED);
+        return new ResponseEntity<>("Book name must be specified", HttpStatus.BAD_REQUEST);
     }
 
     @GetMapping("/")
@@ -32,7 +34,7 @@ public class MockController {
         if(book != null){
             return new ResponseEntity<>(book, HttpStatus.OK);
         }
-        return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);//ResponseEntity.status(404).body("Book with id "+id.toString()+ " not found");
+        return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
     }
 
     @PutMapping("/{id}")
