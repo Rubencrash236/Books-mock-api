@@ -1,0 +1,17 @@
+<div class="card">
+  <form>
+    <h1 class="card-title">Update a book</h1>
+    <div class="card-segment">
+      <label class="label" for="bookName">Book Name</label>
+      <input type="text" min="3" placeholder="Book Name" id="bookName" name="bookName" [(ngModel)]="book.name">
+    </div>
+
+    <div class="card-segment">
+      <label class="label" for="authorName">Author Name</label>
+      <input type="text" min="3" placeholder="Author Name" id="authorName" name="authorName" [(ngModel)]="book.author">
+    </div>
+  </form>
+  <div class="card-footer">
+    <button class="btn btn-create" (click)="update()">Update</button>
+  </div>
+</div>

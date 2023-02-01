@@ -1,1 +1,73 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+  flex: auto;
+}
+
+.btn{
+  padding: 10px;
+  font-family: arial,sans-serif;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.btn-create {
+  margin-bottom: 10px;
+  background-color: #1aafff;
+  border: 0;
+  border-radius:5px;
+}
+.btn-create:hover {
+  background-color: #1596da;
+}
+.btn-create:active {
+  background-color: #127cb0;
+}
+
+.btn-update {
+  background-color: rgba(255, 220, 65, 0.8);
+  border: 0;
+  border-radius: 5px;
+}
+.btn-update:hover{
+  background-color: rgba(206, 178, 58, 0.8);
+}
+.btn-update:active{
+  background-color: rgba(173, 149, 49, 0.8);
+}
+
+.btn-delete {
+  background-color: rgb(255, 59, 59);
+  border: 0;
+  border-radius: 5px;
+}
+.btn-delete:hover {
+  background-color: rgb(208, 40, 40);
+}
+.btn-delete:active {
+  background-color: rgb(180, 33, 33);
+}
+
+.card{
+  margin-top: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+  text-align: center;
+  border: 1px solid darkgray;
+  border-radius: 5px;
+  padding: 10px;
+  font-family: arial,sans-serif;
+}
+
+.card-segment{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.card-footer{
+  text-align: end;
+}
+
+.label {
+  margin-right: 3px;
+}
