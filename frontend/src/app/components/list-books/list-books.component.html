@@ -9,9 +9,9 @@
     <th>Actions</th>
   </tr>
   <tr *ngFor="let book of books">
-    <td>{{book.id}}</td>
-    <td>{{book.name}}</td>
-    <td>{{book.author}}</td>
+      <td [routerLink]="['/peak-book', book.id]">{{book.id}}</td>
+      <td [routerLink]="['/peak-book', book.id]">{{book.name}}</td>
+      <td [routerLink]="['/peak-book', book.id]">{{book.author}}</td>
     <td>
       <button class="btn btn-update" (click) = "edit(book.id)">Update</button>
       <button class="btn btn-delete" (click) = "delete(book.id)">Delete</button>

@@ -3,8 +3,10 @@ import { RouterModule, Routes } from '@angular/router';
 import {ListBooksComponent} from "./components/list-books/list-books.component";
 import {EditBookComponent} from "./components/edit-book/edit-book.component";
 import {CreateBookComponent} from "./components/create-book/create-book.component";
+import {PeakBookComponent} from "./components/peak-book/peak-book.component";
 
 const routes: Routes = [
+  {path: 'peak-book/:id', component: PeakBookComponent},
   {path: 'create-book', component: CreateBookComponent},
   {path: 'edit-book/:id', component:EditBookComponent},
   {path: 'list-books', component: ListBooksComponent},
