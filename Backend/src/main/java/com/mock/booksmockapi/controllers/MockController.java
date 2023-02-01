@@ -7,8 +7,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-
 @RestController
 @RequestMapping("/api/Books/")
 @RequiredArgsConstructor
@@ -17,6 +15,7 @@ public class MockController {
 
     @PostMapping("/")
     public ResponseEntity<?> createBook(@RequestBody Book newBook){
+        //return the created book to be used on the frontend
         if(newBook.getName() != null)
             return new ResponseEntity<>(newBook, HttpStatus.CREATED);
         return new ResponseEntity<>("Book name must be specified", HttpStatus.BAD_REQUEST);
@@ -38,6 +37,7 @@ public class MockController {
 
     @PutMapping("/{id}")
     public ResponseEntity<?> updateBook(@RequestBody Book updateBook,@PathVariable Integer id){
+        // return the updated book to be used in the alert on the frontend
         if(bookService.getOne(id) != null){
             return new ResponseEntity<>(updateBook, HttpStatus.OK);
         }
@@ -46,8 +46,10 @@ public class MockController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteBook(@PathVariable Integer id) {
-        if(bookService.getOne(id) != null) {
-            return new ResponseEntity<>(null, HttpStatus.NO_CONTENT);
+        //return the deleted object to be used in the alert on the frontend
+        Book book = bookService.getOne(id);
+        if(book != null) {
+            return new ResponseEntity<>(book, HttpStatus.OK);
         }
         return new ResponseEntity<>("Entity not found", HttpStatus.NOT_FOUND);
     }
